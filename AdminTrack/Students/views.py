@@ -2,6 +2,11 @@ from django.shortcuts import render
 from .models import Student
 
 # Create your views here.
+def homepage(request):
+    return render(request, 'home/homepage.html', {
+        
+    })
+
 def student(request):
     students = Student.objects.all()
     context = {
