@@ -12,16 +12,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 import logging
 from os.path import join, dirname
 from dotenv import load_dotenv
 
 dotenv_path = join(dirname(__file__), ".env")
 load_dotenv(dotenv_path)
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+# from decouple import config
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -82,24 +82,26 @@ WSGI_APPLICATION = "AdminTrack.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+     "default": {
+         "ENGINE": "django.db.backends.sqlite3",
+         "NAME": BASE_DIR / "db.sqlite3",
+     }
+ }
 
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', #postgresql
-        'NAME': os.environ["NAME"],
-        'USER': os.environ["USER"],
+        'NAME': "postgres",
+        'USER': "postgres",
         'PASSWORD': os.environ["PASSWORD"],
         'HOST': os.environ["HOST"],
         'PORT': os.environ["PORT"],
         }
     }
+    """
 
 
 # Password validation
