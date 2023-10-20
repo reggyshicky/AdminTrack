@@ -6,3 +6,4 @@ Students/__pycache__/
 Students/migrations/__pycache__/
 AdminTrack/__pycache__/
 mysite.log
+AdminTrack/.env
