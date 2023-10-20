@@ -2,5 +2,5 @@
 ../AdminTrack
 Accounts/__pycache__/
 Accounts/migrations/__pycache__/
-AdminTrack/AdminTrack/__pycache__/
+AdminTrack/__pycache__/
 mysite.log
