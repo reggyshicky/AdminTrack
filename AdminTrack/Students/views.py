@@ -7,9 +7,12 @@ def homepage(request):
         
     })
 
-def student(request):
+def view_student(request):
     students = Student.objects.all()
     context = {
         "students": students,
     }
     return render(request, 'students/student.html', context)
+
+
+    
