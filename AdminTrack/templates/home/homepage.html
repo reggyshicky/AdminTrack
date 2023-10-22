@@ -1,5 +1,42 @@
 {% extends "layout.html" %}
-{% block Homepage %}
+{% block content %}
 
+    <div class="text-center my-5">
+        <h1 class="school-name"><span class="italic">AdminTrack School Management System</span></h1>
+        <i><p class="lead">Administering Education, Effortlessly</p><i>
+    </div>
 
+    <div class="image-container">
+        <img src="media/images/School-admin.jpg" alt="School Image" class="school-image">
+    </div>
+
+    <style>
+        body {
+            background-color: #cfe2f3; 
+            margin: 0;
+        }
+        .school-name {
+            font-size: 36px;
+            color: #0074d9; /* Blue color for school name */
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .lead {
+            font-size: 20px;
+            color: #555; /* Slightly muted text color */
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .school-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 {% endblock %}

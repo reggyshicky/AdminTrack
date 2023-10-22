@@ -1,0 +1,30 @@
+The line <li>Year Of Study: <strong>{{ student.get_yearOfStudy_display }}</strong></li> is referencing the get_yearOfStudy_display method.
+ In Django models, when you create a field with choices like yearOfStudy that has predefined options, Django automatically generates a
+  method for each of the choices fields called get_<field_name>_display. This method returns the human-readable value of the field based 
+    on the choices you defined.
+
+    In your case, you defined YEAR_CHOICES with choices like:
+    
+    python
+    Copy code
+    YEAR_CHOICES = [
+        (1, 'Year 1'),
+        (2, 'Year 2'),
+        (3, 'Year 3'),
+    ]
+    So, if a student object has yearOfStudy set to 1, calling {{ student.get_yearOfStudy_display }} will display "Year 1" instead of "1"
+     in your HTML. This is a way to display the user-friendly text associated with the selected choice in your template. It makes the 
+     data more human-readable.
+
+
+     {% extends "layout.html" %}
+{% block content %}
+    <div class="fluid">
+        <h2>Add Student</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Add Student</button>
+        </form>
+    </div>
+{% endblock %}
