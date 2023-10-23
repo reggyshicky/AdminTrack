@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h3 class="text-center"><i>Add Student</i></h3>
+    <h3 class="text-center">Update Attendance Record</h3>
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="card bg-light mb-3">
                     <div class="card-header">
-                        <i class="fa-solid fa-address-card fa-lg"></i>Student Registration
+                        <i class="fa-solid fa-address-card fa-lg"></i>Student Attendance
                     </div>
                     <div class="card-body">
                         <form method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <button type="submit" class="btn btn-success">Add Student</button>
-                            <a href="{% url 'view_students' %}" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <a href="{% url 'list_attendance' %}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                     </div>

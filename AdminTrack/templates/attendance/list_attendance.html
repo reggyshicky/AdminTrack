@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            {% if attendance_records %}
+                <div class="card bg-light ms-4 me-4 mb-4">
+                    <div class="card-header">
+                        <i class="fa-solid fa-list fa-lg"></i>Attendance Records
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <a href="{% url 'create_attendance' %}" class="btn btn-info">
+                                <i class="bi bi-person-plus"></i>Create Attendance</a>
+                            <a href="{% url 'list_attendance_by_status' %}" class="btn btn-info">
+                                <i class="bi bi-person-plus"></i>Filter Attendance</a>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Student</th>
+                                            <th scope="col">Date of Attendance</th>
+                                            <th scope="col">Attendance Status</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for attendance_record in attendance_records %}
+                                            <tr>
+                                                <td>{{ attendance_record.student.firstName }} {{ attendance_record.student.lastName }}</td>
+                                                <td>{{ attendance_record.dateOfAttendance }}</td>
+                                                <td>{{ attendance_record.attendanceStatus }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#myModal{{ attendance_record.id }}">
+                                                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                                                    </button>
+                                                    <a class="btn btn-warning me-1" href="{% url 'update_attendance' attendance_record.id %}">
+                                                        <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ attendance_record.id }}">
+                                                        <i class="fa-solid fa-trash-can fa-lg"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                {% for attendance_record in attendance_records %}
+                <div class="modal" id="myModal{{ attendance_record.id }}" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myModalLabel{{ attendance_record.id }}">
+                                    Student: {{ attendance_record.student.firstName }} {{ attendance_record.student.lastName }}
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" arial-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="list-unstyled">
+                                    <li>First Name: <strong>{{ attendance_record.student.firstName }}</strong></li>
+                                    <li>Last Name: <strong>{{ attendance_record.student.lastName }}</strong></li>
+                                    <li>Date Of Birth: <strong>{{ attendance_record.dateOfAttendance }}</strong></li>
+                                    <li>Year Of Study: <strong>{{ attendance_record.attendanceStatus }}</strong></li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="delete{{ attendance_record.id }}" tabindex="-1" aria-labelledby="deleteLabel{{ attendance_record.id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteLabel{{ attendance_record.id }}">
+                                    Student: {{ attendance_record.student.firstName }} {{ attendance_record.student.lastName }}
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete the attendance_record?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="{% url 'delete_attendance_record' attendance_record.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-primary" value="Delete">
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h5 class="alert alert-primary ms-4 me-4">No Attendance Records</h5>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
