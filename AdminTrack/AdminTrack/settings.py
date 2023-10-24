@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+# from django.contrib.auth.backends import ModelBackend
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'Accounts',
     'Students',
     'Attendance',
+    'Teacher',
+    'Books',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +81,8 @@ TEMPLATES = [
         },
     },
 ]
+
+# AUTH_USER_MODEL = "Accounts.User"
 
 WSGI_APPLICATION = "AdminTrack.wsgi.application"
 
@@ -125,7 +130,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

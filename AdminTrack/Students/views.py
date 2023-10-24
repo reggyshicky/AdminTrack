@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import authenticate, login, logout
 from .models import Student
 from .forms import StudentForm
 
 # Create your views here.
-
 
 def view_students(request):
     students = Student.objects.all()

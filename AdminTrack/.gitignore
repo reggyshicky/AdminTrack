@@ -4,6 +4,8 @@ Accounts/__pycache__/
 Accounts/migrations/__pycache__/
 Students/__pycache__/
 Students/migrations/__pycache__/
+Teacher/__pycache__/
+Teacher/migrations/__pycache__/
 AdminTrack/__pycache__/
 mysite.log
 AdminTrack/.env

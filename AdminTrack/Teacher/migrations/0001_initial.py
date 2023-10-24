@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Student",
+            name="Teacher",
             fields=[
                 (
                     "id",
@@ -23,18 +23,8 @@ class Migration(migrations.Migration):
                 ),
                 ("firstName", models.CharField(max_length=50)),
                 ("lastName", models.CharField(max_length=50)),
-                ("dateOfBirth", models.DateField()),
-                (
-                    "yearOfStudy",
-                    models.IntegerField(
-                        choices=[
-                            (1, "First Year"),
-                            (2, "Second Year"),
-                            (3, "Third Year"),
-                            (4, "Fourth Year"),
-                        ]
-                    ),
-                ),
+                ("qualifications", models.CharField(max_length=50)),
+                ("email", models.CharField(max_length=50)),
             ],
         ),
     ]

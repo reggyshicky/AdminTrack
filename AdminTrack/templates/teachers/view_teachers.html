@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        {% if teachers %}
+        <div class="card bg-light ms-4 me-4 mb-4">
+            <div class="card-header">
+                <i class="fa-regular fa-rectangle-list fa-lg"></i> Teacher Records
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <a href="{% url 'add_teacher' %}" class="btn btn-primary">
+                        <i class="bi bi-person-plus"></i>Add Teacher</a>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Qualifications</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for teacher in teachers %}
+                                <tr>
+                                    <td>{{ teacher.firstName }}</td>
+                                    <td>{{ teacher.lastName }}</td>
+                                    <td>{{ teacher.qualifications }}</td>
+                                    <td>{{ teacher.email }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#myModal{{teacher.id}}">
+                                            <i class="fa-regular fa-eye fa-lg"></i>  
+                                        </button>
+                                        <a class="btn btn-warning me-1" href="{% url 'edit_teacher' teacher.id %}">
+                                            <i class="fa-solid fa-pen-to-square fa-lg" style="color: #511f4d;"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ teacher.id }}">
+                                            <i class="fa-solid fa-trash-can fa-lg"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </p>
+            </div>
+        </div>
+        {% for teacher in teachers %}
+            <div class="modal" id="myModal{{teacher.id}}" tabindex="-1" aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel{{ teacher.id }}">
+                                Teacher: {{ teacher.firstName }} {{ teacher.lastName }}
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <ul class="list-unstyled">
+                                    <li>First Name: <strong>{{ teacher.firstName }}</strong></li>
+                                    <li>Last Name: <strong>{{ teacher.lastName }}</strong></li>
+                                    <li>Qualifications:
+                                        <select id="id_qualifications" name="qualifications">
+                                            {% for key, value in teacher.QUALIFICATION_CHOICE %}
+                                                <option value="{{ key }}" {% if key == teacher.qualifications %} selected {% endif %}>{{ value}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </li>
+                                    <li>Email: <strong>{{ teacher.email }}</strong></li>
+                                </ul>
+                                <button type="submit">Add Teacher</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal - Delete Teacher-->
+            <div class="modal" id="delete{{teacher.id}}" tabindex="-1" aria-labelledby="myModalLabel2" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteLabel{{ teacher.id }}">
+                                Teacher: {{ teacher.firstName }} {{ teacher.lastName }}
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete this teacher?</p>
+                        </div>
+                            <form action="{% url 'delete_teacher' teacher.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-primary" value="Delete">
+                            </form>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h5 class="alert-primary ms-4 me-4">No Teacher Records</h5>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

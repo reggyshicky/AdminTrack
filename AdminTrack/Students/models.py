@@ -6,7 +6,6 @@ YEAR_CHOICES = [
     (3, 'Third Year'),
 	(4, 'Fourth Year'),
 ]
-
 # Create your models here.
 class Student(models.Model):
     firstName = models.CharField(max_length=50)
