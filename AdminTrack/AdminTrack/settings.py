@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'Attendance',
     'Teacher',
     'Books',
+	'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +135,14 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [],  
+    
+}
 
 LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = '/login/'
