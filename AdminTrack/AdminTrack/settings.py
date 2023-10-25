@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'Books',
     'Employees',
     'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -136,10 +137,19 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-LOGIN_URL = 'admin_login/'
-LOGIN_REDIRECT_URL = 'admin_dashboard/'
-LOGOUT_REDIRECT_URL = 'admin_logout/'
 
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [],  
+    
+}
+
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
