@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            /* Add custom CSS styles here */
+            body {
+                background-color: #cfe2f3;
+                font-family: Arial, sans-serif;
+            }
+            .sidebar {
+                height: 100%;
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #1F45FC;
+                color: #fff;
+                padding-top: 20px;
+            }
+            .sidebar a {
+                padding: 15px;
+                text-decoration: none;
+                color: #fff;
+                display: block;
+            }
+            .sidebar a:hover {
+                background-color: #555;
+            }
+            .content {
+                margin-left: 270px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block sidebar">
+                    <div class="position-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'view_students' %}">
+                                    Manage Students
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'view_teachers' %}">
+                                    Manage Teachers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_employees' %}">
+                                    Manage Employees
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'view_books' %}">
+                                    Manage Books
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'list_attendance' %}">
+                                    Manage Attendance
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+    
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
+                    <h1>Welcome, Admin!</h1>
+                    <p>Choose an action from the sidebar.</p>
+                    <!-- Your content goes here -->
+                </main>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    

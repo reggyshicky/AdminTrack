@@ -6,6 +6,12 @@ Students/__pycache__/
 Students/migrations/__pycache__/
 Teacher/__pycache__/
 Teacher/migrations/__pycache__/
+Employees/__pycache__/
+Employees/migrations/__pycache__/
+Attendance/__pycache__/
+Attendance/migrations/__pycache__/
+Books/__pycache__/
+Books/migrations/__pycache__/
 AdminTrack/__pycache__/
 mysite.log
 AdminTrack/.env

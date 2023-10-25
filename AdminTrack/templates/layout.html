@@ -5,6 +5,7 @@
     <title>AdminTrack</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="icon" href="media/images/favicon.ico" type="image/x-icon"/>
   </head>
   <body style="background-color: #cfe2f3;" class="d-flex flex-column min-vh-100">
     <div class="fluid">
@@ -30,14 +31,18 @@
                    Admin_Login
                 </a>
               </li>
-              {% comment%}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'homepage' %}">
-                  Back To Home
+                <a class="nav-link" href="{% url 'admin_logout' %}">
+                   Admin_Logout
                 </a>
               </li>
-              {% endcomment %}
             </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">
+                  Register
+               </a>
+              </li>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'homepage' %}">

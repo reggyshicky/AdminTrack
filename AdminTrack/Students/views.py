@@ -37,4 +37,4 @@ def add_student(request):
             return redirect('view_students')
     else:
         form = StudentForm()
-        return render(request, 'students/add_student.html', {'form': form})
+    return render(request, 'students/add_student.html', {'form': form})

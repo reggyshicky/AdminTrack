@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h3>Edit Student</h3>
+    <h3>Edit Employee</h3>
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="card bg-light mb-3">
                     <div class="card-header">
-                        <i class="fa-solid fa-address-card fa-lg"></i>Edit Student
+                        <i class="fa-solid fa-address-card fa-lg"></i>Edit Employee
                     </div>
                     <div class="card-body">
                         <form method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button type="submit" class="btn btn-success">Edit</button>
-                            <a href="{% url 'view_students' %}" class="btn btn-secondary">Cancel</a>
+                            <a href="{% url 'view_employees' %}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                     </div>

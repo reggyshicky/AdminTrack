@@ -5,5 +5,9 @@ class AttendanceForm(forms.ModelForm):
     class Meta:
         model = Attendance
         fields = ["student", "dateOfAttendance", "attendanceStatus"]
-        #"teacher", "employee"
+        
+        widgets = {
+            'dateOfAttendance': forms.DateInput(attrs={'type': 'date'}),
+        }
+        
         

@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'Attendance',
     'Teacher',
     'Books',
+    'Employees',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -134,8 +136,10 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-LOGIN_URL = '/login/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_URL = 'admin_login/'
+LOGIN_REDIRECT_URL = 'admin_dashboard/'
+LOGOUT_REDIRECT_URL = 'admin_logout/'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
