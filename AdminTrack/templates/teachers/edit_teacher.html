@@ -9,11 +9,11 @@
                     <i class="fa-regular fa-address-card fa-lg"></i> Edit Teacher
                 </div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" action="{% url 'Teacher:view_teachers' %}">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn btn-success">Save</button>
-                        <a href="{% url 'view_teachers' %}" class="btn btn-dark">Cancel</a>
+                        <a class="btn btn-dark">Cancel</a>
                     </form>
                 </div>
             </div>
