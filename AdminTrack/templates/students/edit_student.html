@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h3>Edit Student</h3>
+    <h3>Edit Employee</h3>
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="card bg-light mb-3">
@@ -8,11 +8,11 @@
                         <i class="fa-solid fa-address-card fa-lg"></i>Edit Student
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{% url 'Students:view_students' %}">
+                        <form method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button type="submit" class="btn btn-success">Edit</button>
-                            <a class="btn btn-secondary">Cancel</a>
+                            <a href="{% url 'view_students' %}" class="btn btn-secondary">Cancel</a>                        
                         </form>
                     </div>
                     </div>
@@ -20,3 +20,22 @@
             </div>
         </div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <a href="{% url 'Students:add_student' %}" class="btn btn-primary">
+                        <a href="{% url 'add_student' %}" class="btn btn-primary">
                             <i class="bi bi-person-plus"></i>Add Student</a>
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -33,7 +33,7 @@
                                             <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#myModal{{ student.id }}">
                                                 <i class="fa-solid fa-circle-info fa-lg"></i>
                                             </button>
-                                            <a class="btn btn-warning me-1" href="{% url 'Students:edit_student' student.id %}">
+                                            <a class="btn btn-warning me-1" href="{% url 'edit_student' student.id %}">
                                                 <i class="fa-solid fa-pen-to-square fa-lg"></i>
                                             </a>
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ student.id }}">
@@ -85,7 +85,7 @@
                             <p>Are you sure you want to delete the student?</p>
                         </div>
                         <div class="modal-footer">
-                            <form action="{% url 'Students:delete_student' student.id %}" method="POST">
+                            <form action="{% url 'delete_student' student.id %}" method="POST">
                                 {% csrf_token %}
                                 <input type="submit" class="btn btn-primary" value="Delete">
                             </form>
