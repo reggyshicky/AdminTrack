@@ -8,7 +8,7 @@
                     <i class="fa-regular fa-address-card fa-lg"></i> Edit the Book
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{% url 'Books:view_books' %}">
+                    <form method="post" action="{% url 'Books:edit' book.id %}">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn btn-success">Save</button>

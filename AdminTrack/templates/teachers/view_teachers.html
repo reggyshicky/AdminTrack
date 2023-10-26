@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    <a href="{% url 'Teacher:add_teacher' %}" class="btn btn-primary">
+                    <a href="{% url 'Teacher:create' %}" class="btn btn-primary">
                         <i class="bi bi-person-plus"></i>Add Teacher</a>
                     <div class="card-body">
                         <table class="table table-hover">
@@ -33,7 +33,7 @@
                                         <button type="button" class="btn btn-success me-1" data-bs-toggle="modal" data-bs-target="#myModal{{teacher.id}}">
                                             <i class="fa-regular fa-eye fa-lg"></i>  
                                         </button>
-                                        <a class="btn btn-warning me-1" href="{% url 'Teacher:edit_teacher' teacher.id %}">
+                                        <a class="btn btn-warning me-1" href="{% url 'Teacher:modified' teacher.id %}">
                                             <i class="fa-solid fa-pen-to-square fa-lg" style="color: #511f4d;"></i>
                                         </a>
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ teacher.id }}">

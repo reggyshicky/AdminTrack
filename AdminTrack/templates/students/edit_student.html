@@ -8,11 +8,11 @@
                         <i class="fa-solid fa-address-card fa-lg"></i>Edit Student
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" action="{% url 'Students:view_students' %}">
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button type="submit" class="btn btn-success">Edit</button>
-                            <a href="{% url 'view_students' %}" class="btn btn-secondary">Cancel</a>
+                            <a class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                     </div>

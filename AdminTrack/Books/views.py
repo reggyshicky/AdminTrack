@@ -30,29 +30,29 @@ def view_books(request):
     }
     return render(request, 'books/view_books.html', context)
 
-def edit_book(request, id):
+def edit(request, id):
     """function for admin to edit teacher information"""
     book = get_object_or_404(Book, pk=id)
     if request.method == 'POST':
         form = BookForm(request.POST, instance=book)
         if form.is_valid():
             form.save()
-            return redirect('view_books')
+            return redirect('Books:view_books')
     else:
         form = BookForm(instance=book)
-    return render(request, 'books/edit_book.html', {'form': form, 'book':book})
+    return render(request, 'books/edit_book.html', {'form': form, 'book': book})
 
 def delete_book(request, id):
     book = get_object_or_404(Book, pk=id)
     book.delete()
-    return redirect('view_books')
+    return redirect('Books:view_books')
 
-def add_book(request):
+def add(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('view_books')
+            return redirect('Books:view_books')
     else:
         form = BookForm()
     return render(request, 'books/add_book.html', {'form': form})

@@ -15,4 +15,4 @@ class Teacher(models.Model):
     email = models.CharField(max_length=50)
 
     def __str__(self):
-        return f'{self.firstName} {self.lastName}'
+        return f'({self.pk}){self.firstName} {self.lastName}'
