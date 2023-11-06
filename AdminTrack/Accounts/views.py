@@ -47,8 +47,10 @@ def admin_login(request):
         
     return render(request, 'admin_login.html')
 
+def features(request):
+    return render(request, 'home/features.html')
 
-    
+   
 def admin_logout(request):
     auth.logout(request)
     return redirect('homepage')
