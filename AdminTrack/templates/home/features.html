@@ -6,24 +6,46 @@
     <div class="feature">
         <img src="{% static 'images/Login.png' %}" alt="Feature 1" class="feature-image">
         <h3>Feature 1: User Authentication</h3>
-        <p>Secure and user-friendly authentication system that allows users to log in, and manage their accounts with ease.</p>
+        <p>Secure and user-friendly authentication system that allows users to log in and manage their accounts with ease.</p>
     </div>
     <div class="feature">
         <img src="{% static 'images/About.png' %}" alt="Feature 2" class="feature-image">
         <h3>Feature 2: About</h3>
-        <p>Get to know information about AdminTrack</p>
+        <p>Get to know information about AdminTrack.</p>
     </div>
     <div class="feature">
         <img src="{% static 'images/Dashboard.png' %}" alt="Feature 3" class="feature-image">
         <h3>Feature 3: Dashboard</h3>
-        <p>Effortlessly manoeuvre through core project functionalities.</p>
+        <p>Effortlessly maneuver through core project functionalities.</p>
     </div>
 </section>
 <style>
+    #key-features {
+        background-color: #f5f5f5; /* Set the background color */
+        padding: 40px 0; /* Add padding to space out the section */
+    }
+
+    .feature {
+        margin: 20px; /* Add margin to separate features */
+        padding: 20px; /* Add padding to features for a clean look */
+        border: 1px solid #ddd; /* Add a border around features */
+        background-color: #fff; /* Set feature background color */
+        border-radius: 5px; /* Add rounded corners to features */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
+    }
+
     .feature-image {
-        max-width: 30%;
-        height: 50%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    h3 {
+        font-size: 24px; /* Adjust feature title font size */
+        margin: 10px 0; /* Add margin to space out title and description */
+    }
+
+    p {
+        font-size: 18px; /* Adjust feature description font size */
     }
 </style>
-
 {% endblock %}
