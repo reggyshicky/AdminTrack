@@ -34,6 +34,33 @@
                 margin-left: 270px;
                 padding: 20px;
             }
+            .intro-text {
+                font-size: 18px;
+                color: #555;
+            }
+            
+            .activity-section, .tasks-section {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            
+            .activity-section h2, .tasks-section h2 {
+                font-size: 24px;
+                color: #1F45FC;
+            }
+            
+            .activity-list, .tasks-list {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            
+            .activity-list li, .tasks-list li {
+                font-size: 16px;
+                color: #333;
+            }
         </style>
     </head>
     <body>
@@ -67,15 +94,42 @@
                                     Manage Attendance
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'homepage' %}">
+                                    Back To Home
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
-    
+                <div>
+                    
+                </div>
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
                     <h1>Welcome, Admin!</h1>
-                    <p>Choose an action from the sidebar.</p>
-                    <!-- Your content goes here -->
+                    <p class="intro-text">Choose an action from the sidebar.</p>
+                    
+                    <div class="activity-section">
+                        <i><h2>Recent Activity</h2></i>
+                        <i><p>Here are the latest activities on your admin dashboard:</p></i>
+                        <ul class="activity-list">
+                            <i><li>Updated student records.</li></i>
+                            <i><li>Added new teachers to the system.</li></i>
+                            <i><li>Checked employee attendance for today.</li></i>
+                        </ul>
+                    </div>
+                
+                    <div class="tasks-section">
+                        <i><h2>Upcoming Tasks</h2></i>
+                        <i><p>Here are some tasks you need to complete:</p></i>
+                        <ul class="tasks-list">
+                            <i><li>Approve pending book requests.</li><i>
+                            <i><li>Review and finalize the monthly reports.</li></i>
+                            <i><li>Schedule the next faculty meeting.</li></i>
+                        </ul>
+                    </div>
                 </main>
+                
             </div>
         </div>
     
