@@ -17,11 +17,29 @@ Welcome to AdminTrack, a School Management System for Admins! AdminTrack is a co
   - Add, view, update, and delete students, teachers, and employees records.
   - Manage students, teachers, and employees information effortlessly.
 
+* **Manage Students**
+
+![AdminTrack](/AdminTrack/media/images/Manage students.PNG)
+
+* **Manage Teachers**
+
+![AdminTrack](/AdminTrack/media/images/Manage Teachers.PNG)
+
+* **Manage Employees**
+
+![AdminTrack](/AdminTrack/media/images/Manage Employees.PNG)
+
 - **Book Management:**
+
+![AdminTrack](/AdminTrack/media/images/Manage Books.PNG)
+
   - Keep track of the school's book inventory.
   - Add, update, and delete book records.
 
 - **Attendance Tracking:**
+
+![AdminTrack](/AdminTrack/media/images/Manage Attendance.PNG)
+
   - Record and manage students, teachers, and employees attendance.
   - Generate reports for attendance analysis.
 
@@ -42,6 +60,9 @@ This will launch the AdminTrack application.
 2. Open your web browser:
 Visit http://localhost:3000 to access the AdminTrack dashboard.
 3. Navigate through the dashboard:
+
+![AdminTrack](/AdminTrack/media/images/dashboard.PNG)
+
 * Use the navigation menu to access different sections (Manage Students, Manage Teachers, Manage Employees, Manage Books, Manage Attendance).
 * Perform actions such as adding, viewing, updating, and deleting records.
 
