@@ -19,26 +19,26 @@ Welcome to AdminTrack, a School Management System for Admins! AdminTrack is a co
 
 * **Manage Students**
 
-![AdminTrack](/AdminTrack/media/images/Manage students.PNG)
+![AdminTrack](/AdminTrack/media/images/Manage-students.PNG)
 
 * **Manage Teachers**
 
-![AdminTrack](/AdminTrack/media/images/Manage Teachers.PNG)
+![AdminTrack](/AdminTrack/media/images/Manage-teachers.PNG)
 
 * **Manage Employees**
 
-![AdminTrack](/AdminTrack/media/images/Manage Employees.PNG)
+![AdminTrack](/AdminTrack/media/images/Manage-employees.PNG)
 
 - **Book Management:**
 
-![AdminTrack](/AdminTrack/media/images/Manage Books.PNG)
+![AdminTrack](/AdminTrack/media/images/Manage-books.PNG)
 
   - Keep track of the school's book inventory.
   - Add, update, and delete book records.
 
 - **Attendance Tracking:**
 
-![AdminTrack](/AdminTrack/media/images/Manage Attendance.PNG)
+![AdminTrack](/AdminTrack/media/images/Manage-attendance.PNG)
 
   - Record and manage students, teachers, and employees attendance.
   - Generate reports for attendance analysis.
