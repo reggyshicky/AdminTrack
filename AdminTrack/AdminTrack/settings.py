@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-w+1+@r+g_t$c^4jtthrgntdc_pkr#=e*u*2c#2#+by^t&u7vol
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'reginah.pythonanywhere.com']
 
 
 # Application definition
@@ -116,26 +116,24 @@ WSGI_APPLICATION = "AdminTrack.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-     "default": {
-         "ENGINE": "django.db.backends.sqlite3",
-         "NAME": BASE_DIR / "db.sqlite3",
-     }
- }
+# DATABASES = {
+#      "default": {
+#          "ENGINE": "django.db.backends.sqlite3",
+#          "NAME": BASE_DIR / "db.sqlite3",
+#      }
+#  }
 
 
-"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', #postgresql
-        'NAME': "postgres",
-        'USER': "postgres",
-        'PASSWORD': os.environ["PASSWORD"],
-        'HOST': os.environ["HOST"],
-        'PORT': os.environ["PORT"],
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "reginah$AdminTrack",
+        'USER': "reginah",
+        'PASSWORD': "Fodekelo#",
+        'HOST': "reginah.mysql.pythonanywhere-services.com",
+        'PORT': "3306",
         }
     }
-    """
 
 
 # Password validation
@@ -167,8 +165,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': [],  
-    
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+
 }
 
 LOGIN_URL = '/login/'
