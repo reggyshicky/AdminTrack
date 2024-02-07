@@ -50,15 +50,15 @@ Welcome to AdminTrack, a School Management System for Admins! AdminTrack is a co
 To run the AdminTrack School Management System locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/reggyshicky/AdminTrack.git`
-2. Navigate to the project directory: `cd task-management-system`
-3. Install dependencies: `npm install`
+2. Navigate to the project directory: `cd AdminTrack`
+3. Install dependencies: `pip install -r requirements.txt`
 
 ### Usage
 
-1. Start the application: `npm start`
+1. Start the application: `django manage.py runserver`
 This will launch the AdminTrack application.
 2. Open your web browser:
-Visit http://localhost:3000 to access the AdminTrack dashboard.
+Visit http://localhost:8000 to access the AdminTrack dashboard.
 3. Navigate through the dashboard:
 
 ![AdminTrack](/AdminTrack/media/images/dashboard.PNG)
